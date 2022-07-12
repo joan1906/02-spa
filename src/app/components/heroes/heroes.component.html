@@ -1,7 +1,7 @@
 <h1>Heroes <small>Marvel y DC</small></h1>
 
 <div class="card-columns">
-  <div class="card card__borde" *ngFor="let heroe of heroes">
+  <div class="card card__borde animated fadeIn fast" *ngFor="let heroe of heroes">
     <img class="card-img-top" [src]="heroe.img" [alt]="heroe.nombre" />
     <div class="card-body">
       <h5 class="card-title">{{heroe.nombre}}</h5>
