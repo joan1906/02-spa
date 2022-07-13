@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+// modulos
+import { FormsModule } from '@angular/forms';
+
+
 // Rutas
 import { APP_ROUTING } from './app.routes';
 
@@ -24,7 +28,11 @@ import { HeroeComponent } from './components/heroe/heroe.component';
     HeroesComponent,
     HeroeComponent,
   ],
-  imports: [BrowserModule, APP_ROUTING],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    APP_ROUTING
+  ],
   providers: [HeroesService],
   bootstrap: [AppComponent],
 })
