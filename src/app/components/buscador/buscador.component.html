@@ -1,24 +1,15 @@
-<h1>Buscando: <small>{{termino}}</small></h1>
+<h1>
+  Buscando: <small>{{ termino }}</small>
+</h1>
 
-<div class="card-columns">
-  <div class="card card__borde animated fadeIn fast" *ngFor="let heroe of heroes; let i = index">
-    <img class="card-img-top" [src]="heroe.img" [alt]="heroe.nombre" />
-    <div class="card-body">
-      <h5 class="card-title">{{heroe.nombre}}</h5>
-      <p class="card-text">
-        {{heroe.bio}}
-      </p>
-      <p class="card-text">
-        <small class="text-muted"><strong>{{heroe.casa}}</strong> - {{heroe.aparicion}}</small>
-      </p>
-
-      <!-- una forma de hacerlo mediante codigo en el .ts -->
-      <button class="btn btn-outline-success btn-block" (click)="verHeroe(i)">Ver mas...</button>
-
-      <!-- otra forma de hacerlo mediante [routerLink] -->
-      <!-- <a [routerLink]="['/heroe', i]" class="btn btn-outline-primary">ver mas</a> -->
-
+<div class="row animated fadeIn fast" *ngIf="heroes.length == 0">
+  <div class="col-md-12">
+    <div class="alert alert-info" role="alert">
+      No existen resultados con el termino: <strong>{{termino}}</strong>
     </div>
   </div>
 </div>
 
+<div class="card-columns">
+  <app-heroe-tarjeta [heroe]="heroe" [index]="heroe.idx" *ngFor="let heroe of heroes"></app-heroe-tarjeta>
+</div>
